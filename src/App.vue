@@ -8,34 +8,28 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
-import Sidebar from './components/Sidebar.vue';
+import { ref, computed, defineAsyncComponent } from 'vue'
+import Sidebar from './components/Sidebar.vue'
 
-import DeclarativeRendering from './views/DeclarativeRendering.vue';
-import AttributeBindings from './views/AttributeBindings.vue';
-import EventListeners from './views/EventListeners.vue';
-import FormBindings from './views/FormBindings.vue';
-import ConditionalRendering from './views/ConditionalRendering.vue';
-import ListRendering from './views/ListRendering.vue';
-import ComputedProperty from './views/ComputedProperty.vue';
-import LifecycleTemplateRefs from './views/LifecycleTemplateRefs.vue';
-import Watchers from './views/Watchers.vue';
-
-const selected = ref('DeclarativeRendering');
+const selected = ref('DeclarativeRendering')
 
 const componentsMap = {
-  DeclarativeRendering,
-  AttributeBindings,
-  EventListeners,
-  FormBindings,
-  ConditionalRendering,
-  ListRendering,
-  ComputedProperty,
-  LifecycleTemplateRefs,
-  Watchers,
-};
+  DeclarativeRendering: defineAsyncComponent(() => import('./views/DeclarativeRendering.vue')),
+  AttributeBindings: defineAsyncComponent(() => import('./views/AttributeBindings.vue')),
+  EventListeners: defineAsyncComponent(() => import('./views/EventListeners.vue')),
+  FormBindings: defineAsyncComponent(() => import('./views/FormBindings.vue')),
+  ConditionalRendering: defineAsyncComponent(() => import('./views/ConditionalRendering.vue')),
+  ListRendering: defineAsyncComponent(() => import('./views/ListRendering.vue')),
+  ComputedProperty: defineAsyncComponent(() => import('./views/ComputedProperty.vue')),
+  LifecycleTemplateRefs: defineAsyncComponent(() => import('./views/LifecycleTemplateRefs.vue')),
+  Watchers: defineAsyncComponent(() => import('./views/Watchers.vue')),
+}
 
-const currentComponent = computed(() => componentsMap[selected.value]);
+const currentComponent = computed(() => {
+  return componentsMap[selected.value] || {
+    template: '<div><p>Pilih topik dari sidebar.</p></div>',
+  }
+})
 </script>
 
 <style>
