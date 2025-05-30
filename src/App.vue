@@ -33,20 +33,27 @@ const currentComponent = computed(() => {
 </script>
 
 <style>
+
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f9f9f9;
+  color: #222; /* 🟢 Tambahkan ini! */
 }
 
 .app {
   display: flex;
   height: 100vh;
+  background-color: #f9f9f9;
 }
 
 .main-content {
   flex: 1;
   padding: 2rem;
   overflow-y: auto;
+  background-color: #ffffff; /* 🟢 Tambahkan ini! */
+  color: #222; /* 🟢 Tambahkan ini! */
 }
 </style>
+
+
