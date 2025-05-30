@@ -15,7 +15,7 @@ onMounted(() => {
 });
 </script>
 
-<style scoped>
+<style>
 h2 {
   margin-bottom: 1rem;
   color: #007acc;

@@ -16,7 +16,7 @@ const todos = [
   { id: 3, text: 'Upload ke Netlify' },
 ];
 </script>
-<style scoped>
+<style>
 h2 {
   margin-bottom: 1rem;
   color: #007acc;

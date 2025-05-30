@@ -11,7 +11,7 @@ const message = ref('Vue secara otomatis meng-update DOM berdasarkan data!');
 </script>
 
 
-<style scoped>
+<style >
 h2 {
   margin-bottom: 1rem;
   color: #007acc;

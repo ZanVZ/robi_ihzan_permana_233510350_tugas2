@@ -10,7 +10,7 @@ import { ref } from 'vue';
 const titleClass = ref('highlight');
 </script>
 
-<style scoped>
+<style>
 .highlight {
   color: red;
   font-weight: bold;

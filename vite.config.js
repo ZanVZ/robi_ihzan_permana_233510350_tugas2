@@ -4,6 +4,7 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
   plugins: [vue()],
   build: {
-    outDir: 'dist', // wajib untuk Vercel
-  },
+    outDir: 'dist', 
+  },     
 })
+// y
